@@ -30,8 +30,10 @@ ActiveRecord::Schema.define(version: 2021_11_09_113309) do
     t.datetime "time_in"
     t.datetime "time_out"
     t.integer "OT"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_plans_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -5,7 +5,7 @@ class CreatePlans < ActiveRecord::Migration[6.0]
       t.datetime :time_in
       t.datetime :time_out
       t.integer :OT
-      # t.references :user
+      t.references :user
       t.timestamps
     end
   end
