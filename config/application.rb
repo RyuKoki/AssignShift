@@ -31,5 +31,9 @@ module Project
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Setting default TimeZone in Bangkok
+    config.time_zone = "Bangkok"
+    config.active_record.default_timezone = :local
   end
 end

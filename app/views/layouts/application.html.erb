@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Project</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+	<head>
+		<title>Assign Shift</title>
+		<%= csrf_meta_tags %>
+		<%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+		<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+	</head>
 
-  <body>
+	<% if logged_in? %>    
+		Welcome, <%= current_user.name %>
+		<%= link_to 'logout', logout_path  %>
+	<%end%>
 
-  <div id="main">
-    <% if flash[:notice] %>
-      <div class="message" id="notice">
-        <%= flash[:notice] %>
-      </div>
-    <% elsif flash[:warning] %>
-      <div class="message" id="warning">
-        <%= flash[:warning] %>
-      </div>
-    <% end %>
-    <%= yield %>
-  </div>
-</body>
+	<body>
+
+		<div id="main">
+			<% if flash[:notice] %>
+				<div class="message" id="notice">
+					<%= flash[:notice] %>
+				</div>
+			<% elsif flash[:warning] %>
+				<div class="message" id="warning">
+					<%= flash[:warning] %>
+				</div>
+			<% end %>
+			<%= yield %>
+		</div>
+	</body>
 
 </html>

@@ -47,3 +47,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # more setting
 gem 'bcrypt' , '~> 3.1.16' #3.1.16
+
